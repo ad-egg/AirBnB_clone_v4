@@ -219,6 +219,7 @@ github repo
 * Jared Heck, [jarehec](https://github.com/jarehec) | [@jarehec](https://twitter.com/jarehec)
 * Angie Delgado, [seleniadelgado](https://github.com/seleniadelgado) | [@surf08](https://twitter.com/surf08)
 * Athena Deng, [ad-egg](https://github.com/ad-egg) | [@CloudyCloak](https://twitter.com/CloudyCloak)
+* Shoji Takashima, [stak21](https://github.com/stak21) | [@stak21](https://twitter.com/shojitakashima)
 
 
 ## License
