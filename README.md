@@ -218,7 +218,7 @@ github repo
 * Carrie Ybay, [hicarrie](https://github.com/hicarrie) | [@hicarrie_](https://twitter.com/hicarrie_)
 * Jared Heck, [jarehec](https://github.com/jarehec) | [@jarehec](https://twitter.com/jarehec)
 * Angie Delgado, [seleniadelgado](https://github.com/seleniadelgado) | [@surf08](https://twitter.com/surf08)
-* Athena Deng, [ad-egg](https:github.com/ad-egg) | [@CloudyCloak](https://twitter.com/CloudyCloak)
+* Athena Deng, [ad-egg](https://github.com/ad-egg) | [@CloudyCloak](https://twitter.com/CloudyCloak)
 
 
 ## License
