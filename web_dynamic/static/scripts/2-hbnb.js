@@ -48,9 +48,6 @@ const displayPlaces = () => {
           " + place.number_bathrooms+ " Bathroom \
           </div> \
           </div> \
-          <div class='user'> \
-          <strong>Owner: " + place.user_id + "</strong> \
-          </div> \
           <div class='description'> \
           " + place.description + " \
           </div> \
