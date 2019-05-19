@@ -13,14 +13,15 @@ const ready = () => {
       amenities_h4.html(amenities_list.join(', '))
     })
 
-  // Get the status of the api
-  // let status_url = "https://0.0.0.0:5001/api/v1/status/";
-  // $.get(status_url, {}, (data, textStatus) => {
-    // if (textStatus === 200)
-      // $("div#api_status").addClass("available");
-    // else
-      // $("div#api_status").removeClass("available");
-  // }
+  // if status is "OK", adds class 'available', otherwise remove that class
+  let url = 'http://0.0.0.0:5001/api/v1/status/';
+  $.get(url, function (data, status) {
+    if (data.status === 'OK') {
+      $('div#api_status').addClass('available');
+    } else {
+      $('div#api_status').removeClass('available');
+    }
+  });
 
   // Send a POST request and send a empty dictionary
     //loop into the result of the request and create an ARTICLE tag representing
