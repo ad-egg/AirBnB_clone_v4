@@ -33,6 +33,5 @@ const ready = () => {
     console.log(textStatus)
     console.log(data)
   })
-
 }
 document.addEventListener("DOMContentLoaded", ready);
