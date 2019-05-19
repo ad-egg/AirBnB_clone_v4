@@ -3,8 +3,6 @@
   <head>
 
     <!-- HEAD -->
-    <SCRIPT src="https://code.jquery.com/jquery-3.2.1.min.js"></SCRIPT>
-    <link rel="stylesheet" "href="{{ url_for('static', filename='scripts/1-hbnb.js') }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Holberton AirBnB</title>
@@ -83,8 +81,8 @@
 	    <ul class="popover">
 	      {% for amenity in amens|sort(attribute='name') %}
 	      <LI>
-			  <INPUT type="checkbox"
-					 data-id="{{ amenity_id }}" data-name="{{ amenity_name }}">
+			  <INPUT type="checkbox" 
+			  data-id="{{ amenity.id }}" data-name="{{ amenity.name }}">
 			  {{ amenity.name }}
 		  </LI>
 	      {% endfor %}
