@@ -16,13 +16,14 @@ header {
 
 #api_status {
 	margin-right: 30px;
+	margin-left: auto;
+	margin-top: 15px;
 	float: right;
 	background-color: #cccccc;
 	height: 40px;
 	width: 40px;
 	border-radius: 50%;
 	display: inline-block;
-	border-radius: 50px;
 }
 
 #api_status.available {
