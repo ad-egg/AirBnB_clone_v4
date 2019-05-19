@@ -1,4 +1,3 @@
-#!/usr/bin/node
 // Function called when the document is ready
 const ready = () => {
   // When the checkbox is changed, creates a new list of all the checked boxes
