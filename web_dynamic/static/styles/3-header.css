@@ -23,6 +23,7 @@ header {
 	border-radius: 50%;
 	display: inline-block;
 	border-radius: 50px;
+	position: absolute;
 }
 
 #api_status.available {
