@@ -12,15 +12,16 @@ const ready = () => {
       })
       amenities_h4.html(amenities_list.join(', '))
     })
+
+  // if status is "OK", adds class 'available', otherwise remove that class
+  let url = 'http://0.0.0.0:5001/api/v1/status/';
+  $.get(url, function (data, status) {
+    if (data.status === 'OK') {
+      $('div#api_status').addClass('available');
+    } else {
+      $('div#api_status').removeClass('available');
+    }
+  });
+
 }
 document.addEventListener("DOMContentLoaded", ready);
-
-// if status is "OK", adds class 'available', otherwise remove that class
-let url = 'http://0.0.0.0:5001/api/v1/status/';
-$.get(url, function (data, status) {
-  if (data.status === 'OK') {
-    $('div#api_status').addClass('available');
-  } else {
-    $('div#api_status').removeClass('available');
-  }
-});
