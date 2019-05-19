@@ -84,10 +84,13 @@ const checkboxList = () => {
 const searchButtonClicked = () => {
   // When the search Button is clicked, it takes all the checked amenities and
   // displays places with only those amenities.
+  let amenitiesList = []
   $('section.filters button').click( function () {
+    console.log("hi")
     $.each($('input:checked'), function () {
       amenitiesList.push($(this).attr('data-id'))
-    }
+    })
+    })
     // The way the api works - We send a list of id's under 'amenities',
     // the api grabs all the amenities in the storage and creates a set out of
     // all the amenities we request.
@@ -95,7 +98,6 @@ const searchButtonClicked = () => {
     // of places with the amenities that match the amenities we checked
     displayPlaces({'amenities': amenitiesList})  
   }
-}
 
 // Function called when the document is ready
 document.addEventListener("DOMContentLoaded", ready);
