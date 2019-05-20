@@ -1,6 +1,7 @@
 const ready = () => {
   // When document is ready run these functions
   checkboxList();
+  checkboxLocations();
   statusOK();
   displayPlaces();
   searchButtonClicked();
@@ -70,11 +71,11 @@ const statusOK = () => {
 const checkboxList = () => {
   // When the checkbox is changed, creates a new list of all the checked boxes
   // and displays it
-  $('.amenities input:checkbox').change(function () {
+  $('.amenities .popover input:checkbox').change(function () {
     let amenitiesList = [];
     let amenitiesH4 = $('div.amenities h4');
     amenitiesH4.html('&nbsp;');
-    $.each($('.amenities input:checked'), function () {
+    $.each($('.amenities .popover input:checked'), function () {
       amenitiesList.push($(this).attr('data-name'));
     });
     amenitiesH4.html(amenitiesList.join(', '));
@@ -83,12 +84,12 @@ const checkboxList = () => {
 
 const checkboxLocations = () => {
 // checkbox next to every state/city, when checked they show up in States filter box
-  $('.locations input:checkbox').change(function () {
+  $('.locations .popover input:checkbox').change(function () {
     let locationsList = [];
     let locationsH4 = $('div.locations h4');
     locationsH4.html('&nbsp;');
-    $.each($('.locations input:checked'), function () {
-      locationsList.push($(this).attri('data-name'));
+    $.each($('.locations .popover h2 input:checked'), function () {
+      locationsList.push($(this).attr('data-name'));
     });
     locationsH4.html(locationsList.join(', '));
   });
@@ -99,14 +100,18 @@ const searchButtonClicked = () => {
   // displays places with only those amenities.
   $('section.filters button').click(function () {
     let amenitiesList = [];
-    let locationsList = [];
-    $.each($('.amenities input:checked'), function () {
+    let citiesList = [];
+    let statesList = []
+    $.each($('.amenities .popover input:checked'), function () {
       amenitiesList.push($(this).attr('data-id'));
     });
-    $.each($('.locations input:checked'), function () {
-      locationsList.push($(this).attr('data-id'));
+    $.each($('.locations .popover h2 input:checked'), function () {
+      $.each($('.locations .popover ul li input:checked'), function () {
+        citiesList.push($(this).attr('data-id'));
+      });
+      statesList.push($(this).attr('data-id'));
     });
-    displayPlaces({ 'amenities': amenitiesList, 'locations': locationsList });
+    displayPlaces({ 'amenities': amenitiesList, 'states': statesList, 'cities': citiesList });
   });
   // The way the api works - We send a list of id's under 'amenities',
   // the api grabs all the amenities in the storage and creates a set out of

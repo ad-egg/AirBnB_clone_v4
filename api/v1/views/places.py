@@ -91,7 +91,7 @@ def places_search():
     if cities and len(cities) > 0:
         cities = set([
             c_id for c_id in cities if storage.get('City', c_id)])
-        state_cities = state_cities.union(cities)
+        state_cities = state_cities.intersection(cities)
     amenities = req_json.get('amenities')
     if len(state_cities) > 0:
         all_places = [p for p in all_places if p.city_id in state_cities]
