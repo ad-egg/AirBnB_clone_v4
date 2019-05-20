@@ -5,7 +5,7 @@
 
 .container .places {
 	width: 100%;
-	position: relative;
+	position: fixed;
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
@@ -76,6 +76,12 @@
 	text-align: center;
 	line-height: 25px;
 }
+.container .reviews {
+    	margin-top: 40px;
+	font-size: 16px;
+	border-bottom: #DDDDDD
+}
+
 
 .container .places .user {
 	margin: 20px 0 5px 0;
