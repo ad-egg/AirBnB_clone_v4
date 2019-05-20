@@ -76,6 +76,12 @@
 	text-align: center;
 	line-height: 25px;
 }
+.container .reviews {
+    	margin-top: 40px;
+	font-size: 16px;
+	border-bottom: #DDDDDD
+}
+
 
 .container .places .user {
 	margin: 20px 0 5px 0;
