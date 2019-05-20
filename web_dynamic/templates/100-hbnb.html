@@ -62,9 +62,9 @@
 	    <ul class="popover">
 	      {% for stateTup in states|dictsort %}
 	      <LI>
-		<INPUT type="checkbox"
+		<h2><INPUT type="checkbox"
 		data-id="{{ stateTup[1].id }}" data-name="{{ stateTup[1].name }}">
-		{{ stateTup[0] }}
+		{{ stateTup[0] }} </h2>
 </LI>
 
 	      <UL>
