@@ -60,15 +60,15 @@
 	    <h3>States</h3>
 		<h4>&nbsp;</h4>
 	    <ul class="popover">
-	      {% for state in states|dictsort %}
+	      {% for stateTup in states|dictsort %}
 	      <LI>
 		<INPUT type="checkbox"
-		data-id="{{ state.id }}" data-name="{{ state.name }}">
-		{{ state[0] }}
+		data-id="{{ stateTup[1].id }}" data-name="{{ stateTup[1].name }}">
+		{{ stateTup[0] }}
 </LI>
 
 	      <UL>
-		{% for city in state[1].cities|sort(attribute='name') %}
+		{% for city in stateTup[1].cities|sort(attribute='name') %}
 
 		<LI>
 		  <INPUT type="checkbox"
