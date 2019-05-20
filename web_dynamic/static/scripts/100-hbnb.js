@@ -107,7 +107,6 @@ const searchButtonClicked = () => {
     });
     $.each($('.locations .popover h2 input:checked'), function () {
       $.each($('.locations .popover ul li input:checked'), function () {
-	console.log($(this));
         citiesList.push($(this).attr('data-id'));
       });
       statesList.push($(this).attr('data-id'));
