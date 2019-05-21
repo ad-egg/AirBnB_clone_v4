@@ -27,7 +27,7 @@
 	 ********************** -->
 
 	<SCRIPT src="https://code.jquery.com/jquery-3.2.1.min.js"></SCRIPT>
-	<SCRIPT type="text/javascript" src="/static/scripts/100-hbnb.js"></SCRIPT>
+	<SCRIPT type="text/javascript" src="/static/scripts/101-hbnb.js"></SCRIPT>
 
   </head>
   <!-- **********************
@@ -62,21 +62,21 @@
 	    <ul class="popover">
 	      {% for stateTup in states|dictsort %}
 	      <LI>
-<<<<<<< HEAD
 		<h2><INPUT type="checkbox"
 		data-id="{{ stateTup[1].id }}" data-name="{{ stateTup[1].name }}">
 		{{ stateTup[0] }} </h2>
 </LI>
-		<UL data-state="{{ stateTup[0] }}">
+
+	      <UL>
 		{% for city in stateTup[1].cities|sort(attribute='name') %}
 
 		<LI>
 		  <INPUT type="checkbox"
-		  data-id="{{ city.id }}" data-name="{{ city.name }}" state_id="{{ stateTup[1].id }}">
+		  data-id="{{ city.id }}" data-name="{{ city.name }}">
 		  {{ city.name }}</LI>
 		{% endfor %}
 	      </UL>
-		{% endfor %}
+	      {% endfor %}
 	    </ul>
 	  </div>
 
@@ -108,10 +108,23 @@
 	<section class="places">
 	  <h1>Places</h1>
 	</section>
+      	<!-- ********************
+	     REVIEWS
+	     ******************** -->
+
+	<div class="reviews">
+	  <h2> Reviews </h2>
+	  <ul>
+	    <li>
+	      <h3> From Shoji and Angie </h3>
+	      <p>There was blood everywhere </p>
+	    </li>
+	  </ul>
+	</div>
       </div>
     </main>
 
-    <!-- FOOTER -->
+   <!-- FOOTER -->
 
     <footer>
       Holberton School

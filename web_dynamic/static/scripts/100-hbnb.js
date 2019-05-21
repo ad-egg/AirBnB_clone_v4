@@ -115,6 +115,7 @@ const searchButtonClicked = () => {
     $.each($('.locations .popover h2 input:checked'), function () {
       $.each($('.locations .popover ul li input:checked'), function () {
         citiesList.push($(this).attr('data-id'));
+	statesList.push($(this).attr('state_id'));
       });
       statesList.push($(this).attr('data-id'));
     });
