@@ -9,7 +9,6 @@ const ready = () => {
 const displayPlaces = () => {
   // Requests an api, which retrieves a list of places
   // Create a listing for each place
-  // TODO: need to find a way to get the owners name from the user_id
   let placesSearchUrl = 'http://0.0.0.0:5001/api/v1/places_search';
   $.ajax({
     type: 'POST',
@@ -21,39 +20,35 @@ const displayPlaces = () => {
     success: function (data, textStatus, jQxhr) {
       let placesList = jQxhr.responseJSON;
       for (let place of placesList) {
-        if (place.id === 'f9b11370-f316-492c-92da-014d7bce7213') { console.log(place.name); }
         $('section.places').append(
-          "<article> \
-          <div class='title'> \
-          <h2> " + place.name + "</h2> \
-          <div class='price_by_night'> \
-          " + place.price_by_night + "\
-          </div> \
-          </div> \
-          <div class='information'> \
-          <div class = 'max_guest'>\
-          <i class='fa fa-users fa-3x' aria-hidden='true'></i> \
-          <br /> \
-          " + place.max_guest + " Guests \
-          </div> \
-          <div class='number_rooms'> \
-          <i class='fa fa-bed fa-3x' aria-hidden='true'></i> \
-          <br /> \
-          " + place.number_rooms + " Bedrooms \
-          </div> \
-          <div class='number_bathrooms'> \
-          <i class='fa fa-bath fa-3x' aria-hidden='true'></i> \
-          <br /> \
-          " + place.number_bathrooms + " Bathroom \
-          </div> \
-          </div> \
-          <div class='user'> \
-          <strong>Owner: " + place.user_id + "</strong> \
-          </div> \
-          <div class='description'> \
-          " + place.description + ' \
-          </div> \
-          </article>');
+          `<article>
+          <div class='title'>
+          <h2>${place.name}</h2>
+          <div class='price_by_night'>
+          $${place.price_by_night}
+          </div>
+          </div>
+          <div class='information'>
+          <div class = 'max_guest'>
+          <i class='fa fa-users fa-3x' aria-hidden='true'></i>
+          <br />
+          ${place.max_guest} Guests 
+          </div> 
+          <div class='number_rooms'> 
+          <i class='fa fa-bed fa-3x' aria-hidden='true'></i> 
+          <br /> 
+          ${place.number_rooms} Bedrooms 
+          </div>
+          <div class='number_bathrooms'>
+          <i class='fa fa-bath fa-3x' aria-hidden='true'></i>
+          <br />
+          ${place.number_bathrooms} Bathroom
+          </div>
+          </div>
+          <div class='description'>
+          ${place.description}
+          </div> 
+          </article>`);
       }
     }
   });

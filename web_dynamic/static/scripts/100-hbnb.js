@@ -11,7 +11,7 @@ const displayPlaces = (postData = {}) => {
   // Requests an api, which retrieves a list of places
   // Create a listing for each place
   let placesSearchUrl = 'http://0.0.0.0:5001/api/v1/places_search';
-  let request = $.ajax({
+  $.ajax({
     type: 'POST',
     contentType: 'application/json',
     url: placesSearchUrl,
@@ -23,34 +23,34 @@ const displayPlaces = (postData = {}) => {
       $('section.places').html('');
       for (let place of placesList) {
         $('section.places').append(
-          "<article> \
-          <div class='title'> \
-          <h2> " + place.name + "</h2> \
-          <div class='price_by_night'> \
-          $" + place.price_by_night + "\
-          </div> \
-          </div> \
-          <div class='information'> \
-          <div class = 'max_guest'>\
-          <i class='fa fa-users fa-3x' aria-hidden='true'></i> \
-          <br /> \
-          " + place.max_guest + " Guests \
-          </div> \
-          <div class='number_rooms'> \
-          <i class='fa fa-bed fa-3x' aria-hidden='true'></i> \
-          <br /> \
-          " + place.number_rooms + " Bedrooms \
-          </div> \
-          <div class='number_bathrooms'> \
-          <i class='fa fa-bath fa-3x' aria-hidden='true'></i> \
-          <br \> \
-          " + place.number_bathrooms + " Bathroom \
-          </div> \
-          </div> \
-          <div class='description'> \
-          " + place.description + ' \
-          </div> \
-          </article>');
+          `<article>
+          <div class='title'>
+          <h2>${place.name}</h2>
+          <div class='price_by_night'>
+          $${place.price_by_night}
+          </div>
+          </div>
+          <div class='information'>
+          <div class = 'max_guest'>
+          <i class='fa fa-users fa-3x' aria-hidden='true'></i>
+          <br />
+          ${place.max_guest} Guests 
+          </div> 
+          <div class='number_rooms'> 
+          <i class='fa fa-bed fa-3x' aria-hidden='true'></i> 
+          <br /> 
+          ${place.number_rooms} Bedrooms 
+          </div>
+          <div class='number_bathrooms'>
+          <i class='fa fa-bath fa-3x' aria-hidden='true'></i>
+          <br />
+          ${place.number_bathrooms} Bathroom
+          </div>
+          </div>
+          <div class='description'>
+          ${place.description}
+          </div> 
+          </article>`);
       }
     }
   });
@@ -95,19 +95,27 @@ const checkboxLocations = () => {
   });
 };
 
+const removeCities = () => {
+  // If a State is unchecked remove all cities associated with it
+  console.log($('.locations .popover ul').attr('data-state'));
+};
+
 const searchButtonClicked = () => {
   // When the search Button is clicked, it takes all the checked amenities and
   // displays places with only those amenities.
+  //removeCities();
+
   $('section.filters button').click(function () {
     let amenitiesList = [];
     let citiesList = [];
-    let statesList = []
+    let statesList = [];
     $.each($('.amenities .popover input:checked'), function () {
       amenitiesList.push($(this).attr('data-id'));
     });
     $.each($('.locations .popover h2 input:checked'), function () {
       $.each($('.locations .popover ul li input:checked'), function () {
         citiesList.push($(this).attr('data-id'));
+        statesList.push($(this).attr('state_id'));
       });
       statesList.push($(this).attr('data-id'));
     });
