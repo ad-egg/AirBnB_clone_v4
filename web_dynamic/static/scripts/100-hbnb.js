@@ -95,9 +95,16 @@ const checkboxLocations = () => {
   });
 };
 
+const removeCities = () => {
+  // If a State is unchecked remove all cities associated with it
+  console.log($('.locations .popover ul'))
+}
+
 const searchButtonClicked = () => {
   // When the search Button is clicked, it takes all the checked amenities and
   // displays places with only those amenities.
+  removeCities();
+
   $('section.filters button').click(function () {
     let amenitiesList = [];
     let citiesList = [];
