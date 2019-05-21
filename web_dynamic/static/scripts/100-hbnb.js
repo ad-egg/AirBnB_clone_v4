@@ -88,6 +88,15 @@ const checkboxLocations = () => {
     let locationsList = [];
     let locationsH4 = $('div.locations h4');
     locationsH4.html('&nbsp;');
+    console.log(`states ${$('#stateCheckbox input:checkbox')}`)
+    $.each($("#stateCheckbox:checkbox:not(:checked)"), function () {
+      console.log(this)
+    })
+    if ($(this).checked === undefined)
+    {
+      console.log("hi")
+      removeCities($(this.name))
+    }
     $.each($('.locations .popover h2 input:checked'), function () {
       locationsList.push($(this).attr('data-name'));
     });
@@ -95,15 +104,16 @@ const checkboxLocations = () => {
   });
 };
 
-const removeCities = () => {
+const removeCities = (stateName) => {
   // If a State is unchecked remove all cities associated with it
-  console.log($('.locations .popover ul').attr('data-state'));
+  $.each($(`.locations .popover ul[data-state=Alabama] li input`), function () {
+    this.checked = false;
+  })
 };
 
 const searchButtonClicked = () => {
   // When the search Button is clicked, it takes all the checked amenities and
   // displays places with only those amenities.
-  removeCities();
 
   $('section.filters button').click(function () {
     let amenitiesList = [];
