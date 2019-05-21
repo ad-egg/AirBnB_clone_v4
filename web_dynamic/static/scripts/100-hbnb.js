@@ -103,7 +103,7 @@ const removeCities = () => {
 const searchButtonClicked = () => {
   // When the search Button is clicked, it takes all the checked amenities and
   // displays places with only those amenities.
-  removeCities();
+  //removeCities();
 
   $('section.filters button').click(function () {
     let amenitiesList = [];
