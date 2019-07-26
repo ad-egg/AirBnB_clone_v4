@@ -1,4 +1,5 @@
-<img src="/dev/HBTN-hbnb-Final.png" width="160" height=auto />
+<img src="/dev/HBTN-hbnb-Final.png" width="160" height=auto>
+
 # AirBnB Clone:
 
 * [part 1: custom classes, serialization to JSON file, console, unit tests, and web static](https://github.com/ad-egg/AirBnB_clone)
