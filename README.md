@@ -1,8 +1,10 @@
-<img src="https://github.com/jarehec/AirBnB_clone_v3/blob/master/dev/HBTN-hbnb-Final.png" width="160" height=auto />
+<img src="/dev/HBTN-hbnb-Final.png" width="160" height=auto />
+# AirBnB Clone:
 
-# AirBnB Clone: Phase # 3
-
-: API with Swagger
+* [part 1: custom classes, serialization to JSON file, console, unit tests, and web static](https://github.com/ad-egg/AirBnB_clone)
+* [part 2: addition of database storage engine, Flask application, more unit tests](https://github.com/ad-egg/AirBnB_clone_v2)
+* [part 3: addition of RESTful API](https://github.com/ad-egg/AirBnB_clone_v3)
+* [part 4: dynamic web pages that filter places using API from v3](https://github.com/ad-egg/AirBnB_clone_v4)
 
 ## Description
 
